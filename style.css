@@ -1,0 +1,7 @@
+body {
+    background-image: url(grass.png);
+    background-color: green;
+    background-size: 32px;
+}
+
+#player {width: 32px;}
