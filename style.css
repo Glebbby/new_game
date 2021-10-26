@@ -8,3 +8,10 @@ body {
   width: 32px;
   position: absolute;
 }
+
+#farmhouse {
+  width: 328px;
+  position: absolute;
+  left: 30%;
+  top: 50%;
+}
