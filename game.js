@@ -6,10 +6,11 @@ function launch () {
   game = {
     images: {
       player: document.getElementById('player'),
-      farmhouse: document.getElementById('farmhouse')
+      farmhouse: document.getElementById('farmhouse'),
+      homedoor: document.getElementById('homedoor')
     }
   }
-
+  game.images.homedoor.onclick = () => homedoor_clicked(game)
   start_moving_player(game)
 }
 
@@ -69,3 +70,11 @@ function overlaps (image, x, y, x2, y2) {
       y2 < image.offsetTop + image.offsetHeight)
   )
 }
+
+function homedoor_clicked (game) {
+  game.is_homedoor_open = !game.is_homedoor_open
+  game.images.homedoor.style.filter = game.is_homedoor_open
+    ? 'brightness(0%)'
+    : ''
+}
+//!=not
