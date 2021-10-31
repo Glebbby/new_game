@@ -60,12 +60,12 @@ function move_player (game, dx, dy) {
 function overlaps (image, x, y, x2, y2) {
   return (
     (image.offsetLeft < x &&
-      x < image.offsetLeft + image.width &&
+      x < image.offsetLeft + image.offsetWidth &&
       image.offsetTop < y &&
-      y < image.offsetTop + image.height) ||
+      y < image.offsetTop + image.offsetHeight) ||
     (image.offsetLeft < x2 &&
-      x2 < image.offsetLeft + image.width &&
+      x2 < image.offsetLeft + image.offsetWidth &&
       image.offsetTop < y2 &&
-      y2 < image.offsetTop + image.height)
+      y2 < image.offsetTop + image.offsetHeight)
   )
 }

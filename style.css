@@ -7,11 +7,11 @@ body {
 img {
   image-rendering: pixelated;
   image-rendering: crisp-edges;
+  position: absolute;
 }
 
 #player {
   width: 32px;
-  position: absolute;
 }
 
 #farmhouse {
@@ -19,4 +19,15 @@ img {
   position: absolute;
   left: 30%;
   top: 50%;
+  height: 228px;
+}
+
+#farmhouseimg {
+  width: 100%;
+}
+
+#homedoor {
+  bottom: 0;
+  right: 85px;
+  width: 32px;
 }
