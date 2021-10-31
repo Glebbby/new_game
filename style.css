@@ -4,6 +4,11 @@ body {
   background-size: 32px;
 }
 
+img {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
 #player {
   width: 32px;
   position: absolute;
