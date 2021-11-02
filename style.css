@@ -12,6 +12,7 @@ img {
 
 #player {
   width: 32px;
+  position: absolute;
 }
 
 #farmhouse {
@@ -27,7 +28,7 @@ img {
 }
 
 #homedoor {
-  bottom: 0;
+  bottom: -1px;
   right: 85px;
   width: 32px;
 }

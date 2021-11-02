@@ -45,6 +45,12 @@ function move_player (game, dx, dy) {
   x = x + dx * step_pixels
   y = y + dy * step_pixels
   if (
+    overlaps(homedoor, x, y, player_image.width + x, player_image.height + y)
+  ) {
+    enter_farmhouse(game)
+  }
+
+  if (
     !overlaps(
       farmhouse_image,
       x,
@@ -53,24 +59,22 @@ function move_player (game, dx, dy) {
       player_image.height + y
     )
   ) {
-    player_image.style.left = x
-    player_image.style.top = y
+    player_image.style.left = x + 'px'
+    player_image.style.top = y + 'px'
   }
 }
 
-function overlaps (image, x, y, x2, y2) {
-  return (
-    (image.offsetLeft < x &&
-      x < image.offsetLeft + image.offsetWidth &&
-      image.offsetTop < y &&
-      y < image.offsetTop + image.offsetHeight) ||
-    (image.offsetLeft < x2 &&
-      x2 < image.offsetLeft + image.offsetWidth &&
-      image.offsetTop < y2 &&
-      y2 < image.offsetTop + image.offsetHeight)
-  )
+function overlaps (image, bx, by, bx2, by2) {
+  var ax = image.offsetLeft + (image.parentElement.offsetLeft || 0),
+    ay = image.offsetTop + (image.parentElement.offsetTop || 0)
+  //|| = or
+  var ax2 = ax + image.offsetWidth,
+    ay2 = ay + image.offsetHeight
+  var result = bx2 > ax && bx < ax2 && by2 > ay && by < ay2
+  return result
 }
 
+//&& = and
 function homedoor_clicked (game) {
   game.is_homedoor_open = !game.is_homedoor_open
   game.images.homedoor.style.filter = game.is_homedoor_open
