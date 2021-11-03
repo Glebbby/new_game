@@ -13,6 +13,7 @@ img {
 #player {
   width: 32px;
   position: absolute;
+  z-index: 9999;
 }
 
 #farmhouse {

@@ -85,6 +85,9 @@ function homedoor_clicked (game) {
 function enter_farmhouse (game) {
   var image = document.createElement('img')
   image.src = 'images/farmhouse-inside.png'
+  image.style.left = '20%'
+  image.style.top = '20%'
+  image.style.width = '800px'
   game.images.farmhouse_inside = image
   document.body.appendChild(game.images.farmhouse_inside)
   exit_outside(game)
@@ -94,8 +97,8 @@ function enter_farmhouse (game) {
 
 //helppo tapa saada tietoa netistä on hakea (koodikieli) (koodisana)
 function exit_outside (game) {
-  document.body.detachChild(game.images.farmhouse)
-  document.body.detachChild(game.images.homedoor)
+  document.body.removeChild(game.images.farmhouse)
+  document.body.removeChild(game.images.homedoor)
 }
 
 //jos samassa koodisanassa on kaksi sanaa, toinen alkaa isolla
