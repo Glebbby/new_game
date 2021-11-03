@@ -82,3 +82,20 @@ function homedoor_clicked (game) {
     : ''
 }
 //!=not
+function enter_farmhouse (game) {
+  var image = document.createElement('img')
+  image.src = 'images/farmhouse-inside.png'
+  game.images.farmhouse_inside = image
+  document.body.appendChild(game.images.farmhouse_inside)
+  exit_outside(game)
+}
+
+// ei \ vaan /
+
+//helppo tapa saada tietoa netistä on hakea (koodikieli) (koodisana)
+function exit_outside (game) {
+  document.body.detachChild(game.images.farmhouse)
+  document.body.detachChild(game.images.homedoor)
+}
+
+//jos samassa koodisanassa on kaksi sanaa, toinen alkaa isolla
